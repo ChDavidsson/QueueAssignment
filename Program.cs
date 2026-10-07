@@ -18,7 +18,13 @@ class Program
             Console.WriteLine("5. Avsluta");
 
             string val = Console.ReadLine()!;
-            Console.WriteLine(val);
+            Console.WriteLine($"Du valde: {val}");
+
+            if (uppgifter.Count == 0 && (val == "2" || val == "3"))
+            {
+                Console.WriteLine("Det finns inga uppgifter i kön.");
+                continue;
+            }
 
             switch (val)
             {
@@ -38,7 +44,7 @@ class Program
                     Console.WriteLine($"Uppgiften '{borttagenUppgift}' har tagits bort.");
                     break;
                 case "4":
-                    Console.WriteLine("Alla uppgifter:");
+                    Console.WriteLine("Alla uppgifter i kön:");
                     foreach (var uppgift in uppgifter)
                     {
                         Console.WriteLine(uppgift);
