@@ -29,15 +29,18 @@ class Program
             switch (val)
             {
                 case "1":
+                    //Ber användaren att skriva in uppgiften
                     Console.WriteLine("Ange uppgiften:");
                     string nyUppgift = Console.ReadLine()!;
                     uppgifter.Enqueue(nyUppgift);
                     Console.WriteLine($"Uppgiften '{nyUppgift}' har lagts till.");
                     break;
+                    //Om använder väljer att titta på nästa uppgift, "peek" tittar bara utan att ta bort något.
                 case "2":
                     Console.WriteLine("Nästa uppgift:");
                     Console.WriteLine(uppgifter.Peek());
                     break;
+                    //Om användaren vill ta bort nästa uppgift, "dequeue" tar bort uppgiften som lades till först.
                 case "3":
                     Console.WriteLine("Ta bort nästa uppgift:");
                     string borttagenUppgift = uppgifter.Dequeue();
